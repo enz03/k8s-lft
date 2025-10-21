@@ -1,6 +1,4 @@
-from profissa_lft.host import Host
-from profissa_lft.switch import Switch
-from profissa_lft.controller import Controller
+from profissa_lft.driver import Host, Switch, Controller
 
 h1 = Host('h1')
 h2 = Host('h2')
@@ -24,8 +22,8 @@ c1.setIp('10.0.0.4', 24, 'c1s1')
 c1.initController('10.0.0.4', 9001)
 s1.setController('10.0.0.4', 9001)
 
-s1.connectToInternet('10.0.0.5', 24, "s1host", "hosts1")
+s1.connectToInternet('10.0.0.5', 24, "s1host", "hosts1") 
 
-h1.setDefaultGateway('10.0.0.5', "h1s1")
-h2.setDefaultGateway('10.0.0.5', "h2s1")
-s1.setDefaultGateway('10.0.0.5', "s1")
+h1.setDefaultGateway('10.0.0.5', "h1s1") 
+h2.setDefaultGateway('10.0.0.5', "h2s1") 
+s1.setDefaultGateway('10.0.0.5', "s1") 

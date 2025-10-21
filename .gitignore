@@ -29,3 +29,8 @@ build
 dist
 profissa_lft.egg-info
 .DS_Store
+
+
+/lft_env
+/lft.egg-info
+k8s_lft/__pycache__
