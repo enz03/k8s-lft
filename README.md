@@ -86,7 +86,7 @@ You can choose the backend driver based on your desired setup. The options are K
 
    Then, open your browser and go to [http://localhost:3000](http://localhost:3000) to access Grafana.
 
-   Once inside Grafana, open the Kubernetes / Compute Resources / Namespace (Pods) dashboard to view the list of running pods, their CPU and memory usage, and the overall state of your cluster.
+   Once inside Grafana, open the `Kubernetes/Compute Resources/Namespace (Pods)` dashboard to view the list of running pods, their CPU and memory usage, and the overall state of your cluster.
    You can also explore the Node Exporter Full dashboard for detailed metrics about node performance.
 
  5. **Resetting the Environment**:
