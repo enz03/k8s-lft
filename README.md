@@ -99,7 +99,7 @@ You can choose the backend driver based on your desired setup. The options are K
 #### Using Docker as the Driver
 
 1. **Change the Driver Configuration**:
-   If you want to use Docker instead of Kubernetes, update the driver setting in the `driver.py` file. Modify the line in `/profissa_lft/driver.py` as follows:
+   If you want to use Docker instead of Kubernetes, update the driver setting in the `driver.py` file. Modify the `BACKEND` line in `/profissa_lft/driver.py` as follows:
 
    ```python
    BACKEND = "docker"  # <-- change from "k8s" to "docker"
