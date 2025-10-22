@@ -4,7 +4,7 @@ apt-get update -y
 apt-get upgrade -y
 
 #declare -a versionsAptGet=("=1:8.2p1-4ubuntu0.3" "=2.0.6"    ""     "=1.3-20190808-1" "=3.0pl1-136ubuntu1" "=0.99.9.8"                  "=0.8.12-1ubuntu4" ""     ""      "=2.2.19-3ubuntu2.1" "" "" "" "" "")
-declare -a packagesAptGet=("docker.io" "python3" "iproute2" "iptables" "openvswitch-switch" "python3-pip" "firewalld" "nfdump")
+declare -a packagesAptGet=("docker.io" "python3" "iproute2" "iptables" "openvswitch-switch" "python3-pip" "firewalld" "nfdump" "snapd")
 count=${#packagesAptGet[@]}
 for i in `seq 1 $count` 
 do
@@ -17,3 +17,9 @@ do
 done
 
 pip install pandas
+sudo snap install microk8s --classic
+sudo microk8s --wait-ready
+sudo microk8s enable observability
+
+# If you want to use k8s, remember to stop firewalld to allow management from k8s!
+# sudo systemctl stop firewalld
