@@ -20,8 +20,18 @@ To install the LFT framework, follow these steps:
    ```
 
 ### 2.1 Create a Virtual Environment
+To create and activate a virtual environment, follow these steps:
 
-It’s recommended to set up a virtual environment to isolate dependencies.
+   ```bash
+   # Make sure venv is installed
+   sudo apt install -y python3-venv
+   
+   # Create the virtual environment inside the project folder
+   python3 -m venv <YOUR_ENV_NAME>
+   
+   # Activate the environment
+   source <YOUR_ENV_NAME>/bin/activate
+   ```
 
 ### 2.2 Install Required Modules
 
@@ -39,7 +49,7 @@ To install the necessary dependencies, use the following commands:
 
 ```bash
 chmod +X dependencies.sh
-./dependencies.sh
+sudo ./dependencies.sh
 ```
 
 ## 3. First Run
@@ -63,6 +73,9 @@ You can choose the backend driver based on your desired setup. The options are K
    ```bash
    sudo ./<YOUR_ENV_NAME>/bin/python3 ./examples/simpleSDNTopology.py
    ```
+   ⚠️ Note: During startup, some connection errors may appear while nodes are being initialized and linked.
+   Wait for the error messages to stop, then continue.
+   If after 5 minutes the network could not heal itself back up, refer to Section 5 (Troubleshooting with the Kubernetes Driver).
 
 3. **Visualize the Results**:
    To visualize the results in Grafana, port-forward the Prometheus service from the `observability` namespace:
@@ -73,7 +86,10 @@ You can choose the backend driver based on your desired setup. The options are K
 
    Then, open your browser and go to [http://localhost:3000](http://localhost:3000) to access Grafana.
 
- 4. **Resetting the Environment**:
+   Once inside Grafana, open the Kubernetes / Compute Resources / Namespace (Pods) dashboard to view the list of running pods, their CPU and memory usage, and the overall state of your cluster.
+   You can also explore the Node Exporter Full dashboard for detailed metrics about node performance.
+
+ 5. **Resetting the Environment**:
     After experimenting, you can reset your environment to its initial state by running:
     
     ```bash
